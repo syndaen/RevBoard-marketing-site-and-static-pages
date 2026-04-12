@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Delete Your Account - RevBoard</title>
+  <style>
+    :root {
+      --bg: #0d0d0d;
+      --surface: #161616;
+      --border: #2a2a2a;
+      --red: #c0392b;
+      --red-light: #e74c3c;
+      --text: #e8e8e8;
+      --muted: #888;
+      --heading: #ffffff;
+    }
+
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      font-size: 16px;
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ── Header ─────────────────────────────────────────── */
+    header {
+      max-width: 760px;
+      margin: 0 auto;
+      padding: 24px 24px;
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+
+    .logo-mark {
+      width: 40px;
+      height: 40px;
+      background: var(--red);
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .logo-mark svg {
+      width: 22px;
+      height: 22px;
+      fill: #fff;
+    }
+
+    .logo-text {
+      font-size: 20px;
+      font-weight: 700;
+      color: var(--heading);
+    }
+
+    .logo-text span {
+      color: var(--red-light);
+    }
+
+    /* ── Main ───────────────────────────────────────────── */
+    main {
+      max-width: 760px;
+      margin: 0 auto;
+      padding: 48px 24px;
+    }
+
+    h1 {
+      font-size: 32px;
+      font-weight: 700;
+      color: var(--heading);
+      margin-bottom: 8px;
+    }
+
+    .subtitle {
+      color: var(--muted);
+      font-size: 15px;
+      margin-bottom: 32px;
+    }
+
+    .intro {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-left: 3px solid var(--red);
+      border-radius: 8px;
+      padding: 20px 24px;
+      margin-bottom: 40px;
+    }
+
+    .intro p {
+      margin: 0;
+    }
+
+    h2 {
+      font-size: 20px;
+      font-weight: 600;
+      color: var(--heading);
+      margin-bottom: 16px;
+      padding-top: 32px;
+      border-top: 1px solid var(--border);
+    }
+
+    h2:first-of-type {
+      border-top: none;
+      padding-top: 0;
+    }
+
+    p { margin-bottom: 16px; }
+
+    /* ── Steps ──────────────────────────────────────────── */
+    .steps {
+      list-style: none;
+      counter-reset: step;
+      margin-bottom: 24px;
+    }
+
+    .steps li {
+      counter-increment: step;
+      position: relative;
+      padding-left: 48px;
+      margin-bottom: 20px;
+    }
+
+    .steps li::before {
+      content: counter(step);
+      position: absolute;
+      left: 0;
+      top: 2px;
+      width: 32px;
+      height: 32px;
+      background: var(--red);
+      color: #fff;
+      font-weight: 700;
+      font-size: 15px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .steps li strong {
+      color: var(--heading);
+    }
+
+    /* ── Data table ─────────────────────────────────────── */
+    .data-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-bottom: 24px;
+      font-size: 15px;
+    }
+
+    .data-table th {
+      background: var(--surface);
+      color: var(--muted);
+      font-size: 13px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      text-align: left;
+      padding: 12px 16px;
+      border: 1px solid var(--border);
+    }
+
+    .data-table td {
+      padding: 12px 16px;
+      border: 1px solid var(--border);
+      vertical-align: top;
+    }
+
+    .deleted {
+      color: var(--red-light);
+      font-weight: 600;
+    }
+
+    /* ── Contact card ───────────────────────────────────── */
+    .contact-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 24px;
+      margin-top: 8px;
+    }
+
+    .contact-card p {
+      margin-bottom: 8px;
+    }
+
+    .contact-card p:last-child {
+      margin-bottom: 0;
+    }
+
+    a {
+      color: var(--red-light);
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    /* ── Footer ─────────────────────────────────────────── */
+    footer {
+      max-width: 760px;
+      margin: 0 auto;
+      padding: 32px 24px;
+      border-top: 1px solid var(--border);
+      text-align: center;
+      font-size: 13px;
+      color: var(--muted);
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="logo-mark">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18.92 6.01C18.72 5.42 18.16 5 17.5 5h-11c-.66 0-1.21.42-1.42 1.01L3 12v8c0 .55.45 1 1 1h1c.55 0 1-.45 1-1v-1h12v1c0 .55.45 1 1 1h1c.55 0 1-.45 1-1v-8l-2.08-5.99zM6.5 16c-.83 0-1.5-.67-1.5-1.5S5.67 13 6.5 13s1.5.67 1.5 1.5S7.33 16 6.5 16zm11 0c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5zM5 11l1.5-4.5h11L19 11H5z"/></svg>
+    </div>
+    <div class="logo-text"><span>Rev</span>Board</div>
+  </header>
+
+  <main>
+    <h1>Delete Your Account</h1>
+    <p class="subtitle">How to permanently delete your RevBoard account and all associated data.</p>
+
+    <div class="intro">
+      <p>RevBoard lets you delete your account entirely from within the app. Deletion is <strong>immediate and permanent</strong> &mdash; once confirmed, your garage, builds, modifications, photos, reputation, check-in history, profile data, and account credentials are all removed. This action cannot be undone.</p>
+    </div>
+
+    <h2>How to Delete Your Account</h2>
+    <ol class="steps">
+      <li><strong>Open RevBoard</strong> and navigate to the <strong>Profile</strong> tab (bottom-right).</li>
+      <li>Scroll down and open the <strong>Account &amp; Security</strong> section.</li>
+      <li>Tap <strong>Delete Account</strong>.</li>
+      <li>Read the confirmation prompt, then tap <strong>Confirm</strong> to permanently delete your account.</li>
+    </ol>
+    <p>After confirmation, you will be signed out immediately and your data will begin permanent deletion.</p>
+
+    <h2>What Gets Deleted</h2>
+    <table class="data-table">
+      <thead>
+        <tr>
+          <th>Data Category</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>Garage &amp; vehicles</td><td class="deleted">Permanently deleted</td></tr>
+        <tr><td>Builds &amp; modifications</td><td class="deleted">Permanently deleted</td></tr>
+        <tr><td>Photos &amp; evidence uploads</td><td class="deleted">Permanently deleted</td></tr>
+        <tr><td>Reputation score &amp; history</td><td class="deleted">Permanently deleted</td></tr>
+        <tr><td>Cards &amp; achievements</td><td class="deleted">Permanently deleted</td></tr>
+        <tr><td>Event check-in history</td><td class="deleted">Permanently deleted</td></tr>
+        <tr><td>Profile data (username, bio, avatar)</td><td class="deleted">Permanently deleted</td></tr>
+        <tr><td>Account credentials &amp; auth tokens</td><td class="deleted">Permanently deleted</td></tr>
+        <tr><td>Follow relationships</td><td class="deleted">Permanently deleted</td></tr>
+      </tbody>
+    </table>
+
+    <h2>Data Retention</h2>
+    <p>Account deletion takes effect <strong>immediately upon confirmation</strong>. All data listed above is removed from RevBoard's production database at the time of deletion.</p>
+    <p>Encrypted database backups may retain a transient copy of deleted data for up to <strong>7 days</strong> as part of RevBoard's disaster recovery infrastructure. These backups are not accessible to any user or staff member and are automatically purged on a rolling schedule. No deleted data is retained beyond this backup window.</p>
+
+    <h2>Can't Access the App?</h2>
+    <p>If you are unable to sign in or access the deletion flow within RevBoard, you can request account deletion by email.</p>
+    <div class="contact-card">
+      <p><strong>Email:</strong> <a href="mailto:support@getrevboard.com">support@getrevboard.com</a></p>
+      <p>Include the email address associated with your RevBoard account. We will verify your identity and process the deletion within 48 hours.</p>
+    </div>
+  </main>
+
+  <footer>
+    &copy; 2026 RevBoard. All rights reserved.
+  </footer>
+
+</body>
+</html>
